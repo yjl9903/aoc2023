@@ -1,4 +1,4 @@
-const fs = require('fs');
+import fs from 'fs';
 
 const content = fs.readFileSync('assets/day1/in.txt', 'utf-8').split('\n');
 
