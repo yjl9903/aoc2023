@@ -1,0 +1,7 @@
+{
+  "name": "aoc2023",
+  "private": true,
+  "devDependencies": {
+    "@types/node": "^20.10.2"
+  }
+}
