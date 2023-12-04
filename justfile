@@ -17,5 +17,9 @@ day3:
   Get-Content assets/day3/in.txt | ./day3.exe
   rm *.exe
 
+day4:
+  tsx src/day4/sol1.ts
+  tsx src/day4/sol2.ts
+
 clean:
   rm *.exe  
