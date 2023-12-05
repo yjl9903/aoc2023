@@ -21,5 +21,9 @@ day4:
   tsx src/day4/sol1.ts
   tsx src/day4/sol2.ts
 
+day5:
+  tsx src/day5/sol1.ts
+  tsx src/day5/sol2.ts
+
 clean:
   rm *.exe  
