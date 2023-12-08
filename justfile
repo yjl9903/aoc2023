@@ -1,4 +1,4 @@
-set shell := ["powershell.exe", "-c"]
+set windows-shell := ["powershell.exe", "-c"]
 
 day1:
   g++ src/day1/sol1.cpp -o day1.exe
@@ -31,5 +31,13 @@ day6:
   Get-Content assets/day6/in2.txt | ./day6.exe
   rm *.exe
 
+day8:
+  g++ src/day8/sol1.cpp -o day8.out --std=c++17
+  ./day8.out < assets/day8/in.txt
+  g++ src/day8/sol2.cpp -o day8.out --std=c++17
+  ./day8.out < assets/day8/in.txt
+  rm *.out
+
 clean:
   rm *.exe  
+  rm *.out
