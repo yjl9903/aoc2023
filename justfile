@@ -45,6 +45,13 @@ day8:
   ./day8.out < assets/day8/in.txt
   rm ./*.out
 
+day9:
+  g++ src/day9/sol1.cpp -o day9.out --std=c++17
+  ./day9.out < assets/day9/in.txt
+  g++ src/day9/sol2.cpp -o day9.out --std=c++17
+  ./day9.out < assets/day9/in.txt
+  rm ./*.out
+
 clean:
   rm ./*.exe  
   rm ./*.out

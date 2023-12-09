@@ -4,7 +4,8 @@
     "limits": "cpp",
     "random": "cpp",
     "utility": "cpp",
-    "ios": "cpp"
+    "ios": "cpp",
+    "iosfwd": "cpp"
   },
   "C_Cpp.errorSquiggles": "disabled"
 }
