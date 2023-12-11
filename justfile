@@ -52,6 +52,14 @@ day09:
   ./day09.out < assets/day09/in.txt
   rm ./*.out
 
+day10:
+  g++ src/day10/sol1.cpp -o day10.exe
+  Get-Content assets/day10/in.txt | ./day10.exe
+  g++ src/day10/sol2.cpp -o day10-2.exe
+  Get-Content assets/day10/in.txt | ./day10.exe > test.out
+  Get-Content assets/day10/in.txt | ./day10.exe | ./day10-2.exe
+  rm ./*.exe
+
 day11:
   g++ src/day11/sol1.cpp -o day11.exe
   Get-Content assets/day11/in.txt | ./day11.exe 2
