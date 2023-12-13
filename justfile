@@ -73,6 +73,13 @@ day12:
   ./day12.out < assets/day12/in.txt
   rm ./*.out
 
+day13:
+  g++ src/day13/sol1.cpp -o day13.exe
+  Get-Content assets/day13/in.txt  | ./day13.exe
+  g++ src/day13/sol2.cpp -o day13.exe
+  Get-Content assets/day13/in.txt  | ./day13.exe
+  rm ./*.exe
+
 clean:
   rm ./*.exe  
   rm ./*.out
