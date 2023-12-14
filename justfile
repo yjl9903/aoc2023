@@ -80,6 +80,13 @@ day13:
   Get-Content assets/day13/in.txt  | ./day13.exe
   rm ./*.exe
 
+day14:
+  # g++ src/day14/sol1.cpp -o day14.exe
+  # Get-Content assets/day14/in.txt  | ./day14.exe
+  g++ src/day14/sol2.cpp -o day14.exe
+  Get-Content assets/day14/in.txt  | ./day14.exe
+  rm ./*.exe
+
 clean:
   rm ./*.exe  
   rm ./*.out
