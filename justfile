@@ -75,16 +75,21 @@ day12:
 
 day13:
   g++ src/day13/sol1.cpp -o day13.exe
-  Get-Content assets/day13/in.txt  | ./day13.exe
+  Get-Content assets/day13/in.txt | ./day13.exe
   g++ src/day13/sol2.cpp -o day13.exe
-  Get-Content assets/day13/in.txt  | ./day13.exe
+  Get-Content assets/day13/in.txt | ./day13.exe
   rm ./*.exe
 
 day14:
-  # g++ src/day14/sol1.cpp -o day14.exe
-  # Get-Content assets/day14/in.txt  | ./day14.exe
+  g++ src/day14/sol1.cpp -o day14.exe
+  Get-Content assets/day14/in.txt | ./day14.exe
   g++ src/day14/sol2.cpp -o day14.exe
-  Get-Content assets/day14/in.txt  | ./day14.exe
+  Get-Content assets/day14/in.txt | ./day14.exe
+  rm ./*.exe
+
+day15:
+  g++ src/day15/sol1.cpp -o day15.exe
+  Get-Content assets/day15/in.txt | ./day15.exe
   rm ./*.exe
 
 clean:
