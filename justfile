@@ -90,6 +90,8 @@ day14:
 day15:
   g++ src/day15/sol1.cpp -o day15.exe
   Get-Content assets/day15/in.txt | ./day15.exe
+  g++ src/day15/sol2.cpp -o day15.exe
+  Get-Content assets/day15/in.txt | ./day15.exe
   rm ./*.exe
 
 clean:
