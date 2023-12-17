@@ -101,6 +101,11 @@ day16:
   Get-Content assets/day16/in.txt | ./day16.exe
   rm ./*.exe
 
+day17:
+  g++ src/day17/sol2.cpp -o day17.out --std=c++17
+  ./day17.out < assets/day17/in.txt
+  rm ./*.out
+
 clean:
   rm ./*.exe  
   rm ./*.out

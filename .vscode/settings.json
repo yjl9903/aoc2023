@@ -5,7 +5,14 @@
     "random": "cpp",
     "utility": "cpp",
     "ios": "cpp",
-    "iosfwd": "cpp"
+    "iosfwd": "cpp",
+    "vector": "cpp",
+    "queue": "cpp",
+    "__split_buffer": "cpp",
+    "array": "cpp",
+    "deque": "cpp",
+    "string": "cpp",
+    "string_view": "cpp"
   },
   "C_Cpp.errorSquiggles": "disabled"
 }
