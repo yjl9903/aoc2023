@@ -102,9 +102,18 @@ day16:
   rm ./*.exe
 
 day17:
+  g++ src/day17/sol1.cpp -o day17.out --std=c++17
+  ./day17.out < assets/day17/in.txt
   g++ src/day17/sol2.cpp -o day17.out --std=c++17
   ./day17.out < assets/day17/in.txt
   rm ./*.out
+
+day18:
+  g++ src/day18/sol1.cpp -o day18.exe
+  Get-Content assets/day18/in.txt | ./day18.exe
+  g++ src/day18/sol2.cpp -o day18.exe
+  Get-Content assets/day18/in.txt | ./day18.exe
+  rm ./*.exe
 
 clean:
   rm ./*.exe  
