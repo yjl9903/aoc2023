@@ -115,6 +115,10 @@ day18:
   Get-Content assets/day18/in.txt | ./day18.exe
   rm ./*.exe
 
+day19:
+  tsx src/day19/sol1.ts
+  tsx src/day19/sol2.ts
+
 clean:
   rm ./*.exe  
   rm ./*.out
