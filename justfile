@@ -119,6 +119,9 @@ day19:
   tsx src/day19/sol1.ts
   tsx src/day19/sol2.ts
 
+day20:
+  tsx src/day20/sol2.ts
+
 clean:
   rm ./*.exe  
   rm ./*.out
