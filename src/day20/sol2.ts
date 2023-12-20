@@ -47,7 +47,13 @@ for (const [name, mod] of modules.entries()) {
   }
 }
 
-// const count = { low: 0, high: 0 };
+let turn = 0;
+const loop = {
+  st: undefined,
+  tn: undefined,
+  hh: undefined,
+  dt: undefined,
+};
 function execute() {
   interface Message {
     target: string;
@@ -55,19 +61,10 @@ function execute() {
     signal: boolean;
   }
 
-  let ok = 0;
+  turn++;
   const q: Message[] = [{ target: 'broadcaster', from: '', signal: false }];
   for (let i = 0; i < q.length; i++) {
     const msg = q[i];
-    if (msg.target === 'rx' && !msg.signal) {
-      ok++;
-    }
-    // if (msg.signal) {
-    //   count.high++;
-    // } else {
-    //   count.low++;
-    // }
-    // console.log(msg);
     const mod = modules.get(q[i].target);
     if (!mod) continue;
     if (mod.type === 'broadcaster') {
@@ -82,39 +79,51 @@ function execute() {
         }
       }
     } else if (mod.type === 'conj') {
-      mod.inputs.set(q[i].from, msg.signal);
+      mod.inputs.set(msg.from, msg.signal);
+      if (msg.target === 'lv' && msg.signal) {
+        if (msg.from in loop) {
+          if (loop[msg.from] === undefined) {
+            loop[msg.from] = turn;
+          }
+        }
+      }
       const signal = ![...mod.inputs.values()].reduce((p, v) => p && v, true);
       for (const out of mod.outputs) {
         q.push({ target: out, from: q[i].target, signal });
       }
     }
   }
-  if (ok) {
-    console.log(ok);
-  }
-  return ok === 1;
 }
 
-function getState() {
-  const flip: Record<string, boolean> = {};
-  const conj: Record<string, Map<string, boolean>> = {};
+function resetState() {
   for (const [name, mod] of modules) {
     if (mod.type === 'flip') {
-      flip[name] = mod.state;
+      mod.state = false;
     } else if (mod.type === 'conj') {
-      conj[name] = mod.inputs;
+      for (const key of mod.inputs.keys()) {
+        mod.inputs.set(key, false);
+      }
     }
   }
-  return { flip, conj };
 }
 
-let count = 0;
-while (true) {
-  count++;
-  // console.log(getState());
-  if (execute()) {
+for (let i = 1; ; i++) {
+  execute();
+  if (loop.st && loop.tn && loop.hh && loop.dt) {
     break;
   }
-  // console.log(getState());
+  // const mod = modules.get('lv')! as Conj;
+  // for (const [key, value] of mod.inputs) {
+  //   if (value === true) {
+  //     console.log(i, key);
+  //   }
+  // }
 }
-console.log(count);
+console.log(Object.values(loop).reduce((p, a) => lcm(p, a!), 1));
+
+function gcd(a: number, b: number) {
+  return !b ? a : gcd(b, a % b);
+}
+function lcm(a: number, b: number) {
+  return (a * b) / gcd(a, b);
+}
