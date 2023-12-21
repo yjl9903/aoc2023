@@ -120,7 +120,13 @@ day19:
   tsx src/day19/sol2.ts
 
 day20:
+  tsx src/day20/sol1.ts
   tsx src/day20/sol2.ts
+
+day21:
+  g++ src/day21/sol2.cpp -o day21.exe
+  Get-Content assets/day21/in.txt | ./day21.exe
+  rm ./*.exe
 
 clean:
   rm ./*.exe  
