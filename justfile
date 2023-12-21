@@ -124,8 +124,9 @@ day20:
   tsx src/day20/sol2.ts
 
 day21:
-  g++ src/day21/sol2.cpp -o day21.exe
+  g++ src/day21/sol1.cpp -o day21.exe
   Get-Content assets/day21/in.txt | ./day21.exe
+  python src/day21/sol1.py
   rm ./*.exe
 
 clean:
