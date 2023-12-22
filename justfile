@@ -129,6 +129,11 @@ day21:
   python src/day21/sol1.py
   rm ./*.exe
 
+day22:
+  g++ src/day22/sol2.cpp -o day22.out --std=c++17
+  ./day22.out < assets/day22/in.txt
+  rm ./*.out
+
 clean:
   rm ./*.exe  
   rm ./*.out
