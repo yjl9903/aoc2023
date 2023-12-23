@@ -130,9 +130,21 @@ day21:
   rm ./*.exe
 
 day22:
+  g++ src/day22/sol1.cpp -o day22.out --std=c++17
+  ./day22.out < assets/day22/in.txt
   g++ src/day22/sol2.cpp -o day22.out --std=c++17
   ./day22.out < assets/day22/in.txt
   rm ./*.out
+
+day23:
+  g++ src/day23/sol1.cpp -o day23.exe
+  Get-Content assets/day23/in.txt | ./day23.exe
+  g++ src/day23/sol2.cpp -o day23.exe
+  Get-Content assets/day23/in.txt | ./day23.exe
+  # g++ src/day23/sol3.cpp -o day23-2.exe
+  # Get-Content assets/day23/in.txt | ./day23-2.exe
+  # Get-Content assets/day23/in.txt | ./day23-2.exe | python .\src\day23\sol3.py
+  rm ./*.exe
 
 clean:
   rm ./*.exe  
