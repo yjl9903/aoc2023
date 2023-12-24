@@ -146,6 +146,11 @@ day23:
   # Get-Content assets/day23/in.txt | ./day23-2.exe | python .\src\day23\sol3.py
   rm ./*.exe
 
+day24:
+  g++ src/day24/sol1.cpp -o day24.out --std=c++17
+  ./day24.out < assets/day24/in.txt
+  rm ./*.out
+
 clean:
   rm ./*.exe  
   rm ./*.out
