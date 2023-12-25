@@ -151,6 +151,11 @@ day24:
   ./day24.out < assets/day24/in.txt
   rm ./*.out
 
+day25:
+  g++ src/day25/sol1.cpp -o day25.exe
+  Get-Content assets/day25/in.txt | ./day25.exe
+  rm ./*.exe
+
 clean:
   rm ./*.exe  
   rm ./*.out
